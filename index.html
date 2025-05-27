@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First-Person Spaceship Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1>SPACE PILOT</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p>Initializing systems...</p>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="hud">
+            <div class="hud-element" id="crosshair">+</div>
+            
+            <div class="hud-element" id="speed-meter">
+                <div class="meter-label">SPEED</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="speed-fill"></div>
+                </div>
+                <div class="meter-value" id="speed-value">0</div>
+            </div>
+            
+            <div class="hud-element" id="health-meter">
+                <div class="meter-label">HULL</div>
+                <div class="meter-bar">
+                    <div class="meter-fill health" id="health-fill"></div>
+                </div>
+                <div class="meter-value" id="health-value">100</div>
+            </div>
+            
+            <div class="hud-element" id="coordinates">
+                <div class="coord-label">COORDINATES</div>
+                <div class="coord-value" id="coord-x">X: 0</div>
+                <div class="coord-value" id="coord-y">Y: 0</div>
+                <div class="coord-value" id="coord-z">Z: 0</div>
+            </div>
+        </div>
+        
+        <div id="controls-info">
+            <div class="control-item">WASD - Move</div>
+            <div class="control-item">Mouse - Look</div>
+            <div class="control-item">Space - Boost</div>
+            <div class="control-item">Shift - Brake</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/3.4.3/gl-matrix-min.js"></script>
+    <script src="engine.js"></script>
+    <script src="spaceship.js"></script>
+    <script src="game.js"></script>
+</body>
+</html> 
