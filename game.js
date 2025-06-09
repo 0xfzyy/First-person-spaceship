@@ -24,21 +24,31 @@ class SpaceGame {
     
     async init() {
         try {
+            console.log("Initializing game...");
             this.showLoadingScreen();
             
-            // Create meshes
+            console.log("Creating meshes...");
             this.createMeshes();
-            
-            // Generate environment
+            console.log("Meshes created successfully.");
+
+            console.log("Generating stars...");
             this.generateStars(1000);
+            console.log("Stars generated successfully.");
+
+            console.log("Generating asteroids...");
             this.generateAsteroids(50);
-            
+            console.log("Asteroids generated successfully.");
+
+            console.log("Simulating loading...");
             await this.simulateLoading();
-            this.hideLoadingScreen();
+            console.log("Loading complete.");
             
+            this.hideLoadingScreen();
+            console.log("Starting the game...");
             this.start();
         } catch (error) {
             console.error('Failed to initialize game:', error);
+            alert('An error occurred while initializing the game. Check the console for details.');
         }
     }
     
@@ -153,7 +163,9 @@ class SpaceGame {
         const deltaTime = (currentTime - this.lastTime) / 1000;
         this.lastTime = currentTime;
         
+        console.log("Updating game state...");
         this.update(deltaTime);
+        console.log("Rendering game...");
         this.render();
         
         requestAnimationFrame(() => this.gameLoop());
